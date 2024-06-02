@@ -4,10 +4,17 @@ createCanvas(size);
 
 
 canvas.addEventListener('mouseover', (e) => {
-    e.target.style.backgroundColor = 'black';
+    // prevent changing the bg color of the canvas if there is no cells
+    if (!(e.target === canvas)) {
+        e.target.style.backgroundColor = 'black';
+    }
 })
 
+eraseCanvas();
+
 function createCanvas (size) {
+    eraseCanvas();
+
     for (let i = 0; i < size; i++) {
         const row = document.createElement('div');
         row.classList.add('row');
