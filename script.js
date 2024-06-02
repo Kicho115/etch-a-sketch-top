@@ -1,7 +1,12 @@
 const canvas = document.getElementById('canvas');
+const sizeSlider = document.getElementById('sizeSlider');
 const size = 16;
 createCanvas(size);
 
+sizeSlider.addEventListener('input', (e) => {
+    value = e.target.value;
+    createCanvas(value);
+})
 
 canvas.addEventListener('mouseover', (e) => {
     // prevent changing the bg color of the canvas if there is no cells
@@ -20,7 +25,6 @@ function createCanvas (size) {
         for (let j = 0; j < size; j++) {
             const cell = document.createElement('div');
             cell.classList.add('cell');
-            cell.classList.add(`row${i}-col${j}`);
             cell.style.backgroundColor = 'white';
             row.appendChild(cell);
         }
