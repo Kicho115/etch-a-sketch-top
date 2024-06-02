@@ -22,6 +22,10 @@ canvas.addEventListener('mouseover', (e) => {
     paint(e.target);
 })
 
+canvas.addEventListener('contextmenu', (e) => {
+    paint(e.target, 'white');
+})
+
 resetBtn.addEventListener('click', () => {
     const cells = canvas.querySelectorAll('.cell');
     cells.forEach(cell => {
@@ -57,8 +61,8 @@ function eraseCanvas () {
     }
 }
 
-function paint (cell) {
+function paint (cell, color='black') {
     if (!(cell === canvas) && isMouseDown) {
-        cell.style.backgroundColor = 'black';
+        cell.style.backgroundColor = color;
     }
 }
