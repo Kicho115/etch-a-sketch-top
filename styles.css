@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    background-color: rgb(255, 190, 255);
+    background-color: #ffbeff;
 }
 
 #canvas {
@@ -9,8 +9,8 @@
     flex-wrap: wrap;
     width: 400px;
     height: 400px; 
-    margin: 50px auto;
-    border: 1px solid black;
+    margin: auto;
+    border: 3px solid black;
 }
 
 .row {
@@ -22,4 +22,52 @@
     box-sizing: border-box;
     width: 100%;
     height: 100%;
+    cursor: crosshair;
 } 
+
+.tools {
+    display: flex;
+    justify-content: space-between;
+    margin: 25px auto;
+    width: 400px;
+}
+
+.tools p {
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.tools button {
+    background-color: #FFF7D0;
+    padding: 15px 20px;
+    border-radius: 40px;
+    font-weight: 900;
+    border: 3px solid;
+    cursor: pointer;
+}
+
+#sizeSlider {
+    appearance: none;
+    background: #FFF7D0;
+    border-radius: 10px;
+    margin: 5px 10px;
+    cursor: pointer;
+}
+
+#sizeSlider::-webkit-slider-thumb {
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    background: black;
+    cursor: grab;
+}
+
+#sizeSlider::-moz-range-thumb {
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    background: black;
+    cursor: grab;
+}
