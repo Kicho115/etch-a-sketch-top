@@ -25,17 +25,16 @@ canvas.addEventListener('mouseover', (e) => {
     paint(e.target, isRightClick ? 'white' : 'black');
 })
 
-// canvas.addEventListener('contextmenu', (e) => {
-//     e.preventDefault()
-//     paint(e.target, 'white');
-// })
-
 resetBtn.addEventListener('click', () => {
     const cells = canvas.querySelectorAll('.cell');
     cells.forEach(cell => {
         cell.style.backgroundColor = 'white';
     })
 })
+
+canvas.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+});
 
 sizeSlider.addEventListener('input', (e) => {
     value = e.target.value;
