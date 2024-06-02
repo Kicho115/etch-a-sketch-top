@@ -2,11 +2,20 @@ const canvas = document.getElementById('canvas');
 const sizeSlider = document.getElementById('sizeSlider');
 const resetBtn = document.getElementById('reset');
 const size = 16;
+let isMouseDown = false;
 createCanvas(size);
+
+canvas.addEventListener('mousedown', () => {
+    isMouseDown = true;
+});
+
+canvas.addEventListener('mouseup', () => {
+    isMouseDown = false;
+});
 
 canvas.addEventListener('mouseover', (e) => {
     // prevent changing the bg color of the canvas if there is no cells
-    if (!(e.target === canvas)) {
+    if (!(e.target === canvas) && isMouseDown) {
         e.target.style.backgroundColor = 'black';
     }
 })
