@@ -57,6 +57,16 @@
     cursor: pointer;
 }
 
+#sizeDisplay {
+    align-self: last baseline;
+    background-color: #531D56;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 2px 5px;
+    border-radius: 7px;
+    font-weight: 600;
+}
+
 #sizeSlider {
     appearance: none;
     background: #FFF7D0;

@@ -1,6 +1,7 @@
 const canvas = document.getElementById('canvas');
 const sizeSlider = document.getElementById('sizeSlider');
 const resetBtn = document.getElementById('reset');
+const sizeDisplay = document.getElementById('sizeDisplay');
 const size = 16;
 let isMouseDown = false;
 let isRightClick = false;
@@ -56,6 +57,8 @@ function createCanvas (size) {
         }
         canvas.appendChild(row);
     }
+    
+    sizeDisplay.textContent = `Size: ${size}x${size}`;
 }
 
 function eraseCanvas () {
