@@ -5,19 +5,21 @@ const size = 16;
 let isMouseDown = false;
 createCanvas(size);
 
-canvas.addEventListener('mousedown', () => {
+canvas.addEventListener('mousedown', (e) => {
     isMouseDown = true;
+    paint(e.target);
 });
 
 canvas.addEventListener('mouseup', () => {
     isMouseDown = false;
 });
 
+canvas.addEventListener('mouseleave', () => {
+    isMouseDown = false;
+})
+
 canvas.addEventListener('mouseover', (e) => {
-    // prevent changing the bg color of the canvas if there is no cells
-    if (!(e.target === canvas) && isMouseDown) {
-        e.target.style.backgroundColor = 'black';
-    }
+    paint(e.target);
 })
 
 resetBtn.addEventListener('click', () => {
@@ -52,5 +54,11 @@ function createCanvas (size) {
 function eraseCanvas () {
     while (canvas.firstChild) {
         canvas.removeChild(canvas.lastChild);
+    }
+}
+
+function paint (cell) {
+    if (!(cell === canvas) && isMouseDown) {
+        cell.style.backgroundColor = 'black';
     }
 }
