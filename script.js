@@ -3,11 +3,14 @@ const sizeSlider = document.getElementById('sizeSlider');
 const resetBtn = document.getElementById('reset');
 const size = 16;
 let isMouseDown = false;
+let isRightClick = false;
 createCanvas(size);
 
 canvas.addEventListener('mousedown', (e) => {
+    e.preventDefault()
     isMouseDown = true;
-    paint(e.target);
+    isRightClick = e.button === 2;
+    paint(e.target, isRightClick ? 'white' : 'black');
 });
 
 canvas.addEventListener('mouseup', () => {
@@ -19,13 +22,13 @@ canvas.addEventListener('mouseleave', () => {
 })
 
 canvas.addEventListener('mouseover', (e) => {
-    paint(e.target);
+    paint(e.target, isRightClick ? 'white' : 'black');
 })
 
-canvas.addEventListener('contextmenu', (e) => {
-    e.preventDefault()
-    paint(e.target, 'white');
-})
+// canvas.addEventListener('contextmenu', (e) => {
+//     e.preventDefault()
+//     paint(e.target, 'white');
+// })
 
 resetBtn.addEventListener('click', () => {
     const cells = canvas.querySelectorAll('.cell');
