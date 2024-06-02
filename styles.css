@@ -5,6 +5,14 @@
 }
 
 #canvas {
-    margin: 50px 80px;
-    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(17, 1fr); 
+    grid-template-rows: repeat(17, 1fr); 
+    width: 400px;
+    height: 400px; 
+    border: 1px solid black;
+}
+
+#canvas div {
+    box-sizing: border-box;
 }
