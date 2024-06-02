@@ -1,10 +1,15 @@
 const canvas = document.getElementById('canvas');
-let size = 16;
-canvas.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
-canvas.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+const size = 16;
 
-for (let i = 0; i < size * size; i++) {
-    const div = document.createElement('div');
-    div.style.backgroundColor = 'white';
-    canvas.appendChild(div);
+for (let i = 0; i < size; i++) {
+    const row = document.createElement('div');
+    row.classList.add('row');
+    
+    for (let j = 0; j < size; j++) {
+        const cell = document.createElement('div');
+        cell.classList.add('cell');
+        cell.style.backgroundColor = 'white';
+        row.appendChild(cell);
+    }
+    canvas.appendChild(row);
 }
