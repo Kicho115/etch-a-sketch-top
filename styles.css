@@ -4,11 +4,21 @@
     background-color: #ffbeff;
 }
 
+.title {
+    padding: 30px;
+    text-align: center;
+    font-size: 50px;
+    text-decoration: underline overline #531D56;
+}
+
+#canvas, .tools, .instructions {
+    width: 600px;
+}
+
 #canvas {
     display: flex;
     flex-wrap: wrap;
-    width: 400px;
-    height: 400px; 
+    height: 600px; 
     margin: auto;
     border: 3px solid black;
 }
@@ -29,12 +39,12 @@
     display: flex;
     justify-content: space-between;
     margin: 25px auto;
-    width: 400px;
 }
 
 .tools p {
     text-align: center;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-bottom: 5px;
 }
 
 .tools button {
@@ -42,6 +52,7 @@
     padding: 15px 20px;
     border-radius: 40px;
     font-weight: 900;
+    font-size: 18px;
     border: 3px solid;
     cursor: pointer;
 }
@@ -70,4 +81,20 @@
     border-radius: 15px;
     background: black;
     cursor: grab;
+}
+
+.instructions {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px auto;
+}
+
+.instructions p {
+    background-color: #50434F;
+    color: #ffffff;
+    font-size: 24px;
+    padding: 2px 5px;
+    border-radius: 7px;
+    font-weight: 600;
+    border: 2px solid black;
 }
