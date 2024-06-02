@@ -23,6 +23,7 @@ canvas.addEventListener('mouseover', (e) => {
 })
 
 canvas.addEventListener('contextmenu', (e) => {
+    e.preventDefault()
     paint(e.target, 'white');
 })
 
