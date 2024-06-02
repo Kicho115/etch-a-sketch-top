@@ -10,8 +10,6 @@ canvas.addEventListener('mouseover', (e) => {
     }
 })
 
-eraseCanvas();
-
 function createCanvas (size) {
     eraseCanvas();
 
